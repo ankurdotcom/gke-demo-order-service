@@ -46,7 +46,7 @@ env:
   GKE_ZONE: 'us-central1-c' # TODO: update to your cluster zone
   DEPLOYMENT_NAME: 'gke-demo-order-service-deployment' # TODO: update to your deployment name
   REPOSITORY: 'gke-demo-order' # TODO: update to your Artifact Registry docker repository name
-  IMAGE: 'static-site'
+  IMAGE: 'order-service-image'
   WORKLOAD_IDENTITY_PROVIDER: 'projects/818815210796/locations/global/workloadIdentityPools/github-pool/providers/github-provider' # TODO: update to your workload identity provider
 
 jobs:
