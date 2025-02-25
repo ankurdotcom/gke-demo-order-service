@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: order-service
-          # image: us-central1-docker.pkg.dev/gke-demo-451811/gke-demo-order/order-service-image:latest
+          image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
           ports:
             - containerPort: 8080
