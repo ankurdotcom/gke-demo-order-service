@@ -42,7 +42,7 @@ on:
 env:
   PROJECT_ID: 'gke-demo-451811' # TODO: update to your Google Cloud project ID
   GAR_LOCATION: 'us-central1' # TODO: update to your region
-  GKE_CLUSTER: 'gke-demo-cluster1' # TODO: update to your cluster name
+  GKE_CLUSTER: 'gke-demo-cluster' # TODO: update to your cluster name
   GKE_ZONE: 'us-central1-c' # TODO: update to your cluster zone
   DEPLOYMENT_NAME: 'gke-demo-order-service-deployment' # TODO: update to your deployment name
   REPOSITORY: 'gke-demo-order' # TODO: update to your Artifact Registry docker repository name
