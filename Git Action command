@@ -77,3 +77,21 @@ bindings:
 etag: BwYu-WxNfcE=
 version: 1
 gcp022025@cloudshell:~ (gke-demo-451811)$ 
+
+
+-------------------------
+
+# for temporary GKE cluster (autopilot) down 
+
+kubectl scale deployment --all --replicas=0
+
+# or temporary GKE cluster (autopilot) restore
+
+kubectl scale deployment gke-demo-order-service-deployment --replicas=3
+
+# verify
+
+kubectl get nodes
+kubectl get pods -A
+kubectl get services
+
