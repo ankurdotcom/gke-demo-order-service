@@ -23,7 +23,7 @@ public class OrderService {
         System.out.println("Order details");
         Order order = new Order();
         order.setId(id);
-        order.setCustName("custmer_1");
+        order.setCustName("customer_2");
         return order;
     }  
     
