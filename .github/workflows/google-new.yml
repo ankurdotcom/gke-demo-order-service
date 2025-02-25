@@ -89,6 +89,12 @@ jobs:
           location: '${{ env.GAR_LOCATION }}'
           project_id: '${{ env.PROJECT_ID}}'
 
+      # Build the JAR file
+      - name: 'Build JAR'
+        run: |-
+          chmod +x mvnw
+          ./mvnw clean package -DskipTests
+    
       # Build the Docker image
       - name: 'Build and push Docker container'
         run: |-
