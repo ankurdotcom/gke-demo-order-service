@@ -1,0 +1,79 @@
+gcloud iam service-accounts add-iam-policy-binding "gke-demo-sa@gke-demo-451811.iam.gserviceaccount.com" \
+  --project="gke-demo-451811" \
+  --role="roles/iam.workloadIdentityUser" \
+  --member="principalSet://iam.googleapis.com/projects/818815210796/locations/global/workloadIdentityPools/github-pool/attribute.repository/ankurdotcom/gke-demo-order-service"
+  
+  
+  
+  gcloud projects add-iam-policy-binding {my-project} \
+--role "roles/container.admin" \
+--member "principalSet://iam.googleapis.com/projects/{PROJECT_NUMBER}/locations/global/workloadIdentityPools/{POOL_ID}/attribute.repository/{my-organisation}/{my-repo-name}"
+
+
+
+gcloud projects add-iam-policy-binding gke-demo-451811 \
+--role "roles/container.admin" \
+--member="principalSet://iam.googleapis.com/projects/818815210796/locations/global/workloadIdentityPools/github-pool/attribute.repository/ankurdotcom/gke-demo-order-service"
+
+
+------------
+output
+
+gcp022025@cloudshell:~ (gke-demo-451811)$ gcloud projects add-iam-policy-binding gke-demo-451811 \
+--role "roles/container.admin" \
+--member="principalSet://iam.googleapis.com/projects/818815210796/locations/global/workloadIdentityPools/github-pool/attribute.repository/ankurdotcom/gke-demo-order-service"
+Updated IAM policy for project [gke-demo-451811].
+bindings:
+- members:
+  - serviceAccount:gke-demo-sa@gke-demo-451811.iam.gserviceaccount.com
+  role: roles/artifactregistry.admin
+- members:
+  - serviceAccount:service-818815210796@gcp-sa-artifactregistry.iam.gserviceaccount.com
+  role: roles/artifactregistry.serviceAgent
+- members:
+  - serviceAccount:gke-demo-sa@gke-demo-451811.iam.gserviceaccount.com
+  role: roles/compute.admin
+- members:
+  - serviceAccount:service-818815210796@compute-system.iam.gserviceaccount.com
+  role: roles/compute.serviceAgent
+- members:
+  - principalSet://iam.googleapis.com/projects/818815210796/locations/global/workloadIdentityPools/github-pool/attribute.repository/ankurdotcom/gke-demo-order-service
+  - serviceAccount:gke-demo-sa@gke-demo-451811.iam.gserviceaccount.com
+  role: roles/container.admin
+- members:
+  - serviceAccount:service-818815210796@gcp-sa-gkenode.iam.gserviceaccount.com
+  role: roles/container.defaultNodeServiceAgent
+- members:
+  - serviceAccount:service-818815210796@container-engine-robot.iam.gserviceaccount.com
+  role: roles/container.serviceAgent
+- members:
+  - serviceAccount:service-818815210796@container-analysis.iam.gserviceaccount.com
+  role: roles/containeranalysis.ServiceAgent
+- members:
+  - serviceAccount:service-818815210796@containerregistry.iam.gserviceaccount.com
+  role: roles/containerregistry.ServiceAgent
+- members:
+  - serviceAccount:service-818815210796@gcp-sa-containerscanning.iam.gserviceaccount.com
+  role: roles/containerscanning.ServiceAgent
+- members:
+  - serviceAccount:818815210796-compute@developer.gserviceaccount.com
+  - serviceAccount:818815210796@cloudservices.gserviceaccount.com
+  role: roles/editor
+- members:
+  - serviceAccount:gke-demo-sa@gke-demo-451811.iam.gserviceaccount.com
+  role: roles/iam.serviceAccountAdmin
+- members:
+  - serviceAccount:gke-demo-sa@gke-demo-451811.iam.gserviceaccount.com
+  role: roles/iam.workloadIdentityUser
+- members:
+  - serviceAccount:service-818815210796@gcp-sa-networkconnectivity.iam.gserviceaccount.com
+  role: roles/networkconnectivity.serviceAgent
+- members:
+  - user:gcp022025@gmail.com
+  role: roles/owner
+- members:
+  - serviceAccount:service-818815210796@gcp-sa-pubsub.iam.gserviceaccount.com
+  role: roles/pubsub.serviceAgent
+etag: BwYu-WxNfcE=
+version: 1
+gcp022025@cloudshell:~ (gke-demo-451811)$ 
