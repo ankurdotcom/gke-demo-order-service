@@ -1,0 +1,8 @@
+services:
+  dbservice:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD:example
+      POSTGRES_USER:example
+      POSTGRES_DB:oderDb
+   
