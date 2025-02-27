@@ -1,8 +1,19 @@
 services:
   dbservice:
     image: postgres
+    restart: always
     environment:
-      POSTGRES_PASSWORD:example
-      POSTGRES_USER:example
-      POSTGRES_DB:oderDb
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: example
+      POSTGRES_DB: orderDb
+    volumes:
+      - ./data:/db1/data
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+# volumes:
+#   dbservice_data:
    
