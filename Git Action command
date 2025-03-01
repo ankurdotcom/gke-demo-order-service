@@ -1,5 +1,6 @@
 refrence : https://cloud.google.com/blog/products/identity-security/enabling-keyless-authentication-from-github-actions
 
+Add new Provider in Pool
 
 gcloud iam workload-identity-pools providers create-oidc "my-provider" \
   --project="${PROJECT_ID}" \
@@ -10,6 +11,21 @@ gcloud iam workload-identity-pools providers create-oidc "my-provider" \
   --issuer-uri="https://token.actions.githubusercontent.com"
 
 ------------------
+
+Configure provider attributes
+
+
+google.subject = assertion.sub
+attribute.aud = assertion.aud
+attribute.repository = assertion..repository
+
+
+Attribute conditions :
+
+ attribute.repository="ankurdotcom/gke-demo-devlivery-service"
+
+
+-------------
 
 gcloud iam service-accounts add-iam-policy-binding "gke-demo-sa@gke-demo-451811.iam.gserviceaccount.com" \
   --project="gke-demo-451811" \
